@@ -1,0 +1,33 @@
+:root {
+    --green: #3D948E;
+    --yellow: #DCCE90;
+    --grey: #EBEBEB;
+    --dark-grey: #383838;
+    --background: #FFFF;
+    --text-color1: #212121;
+    --text-color2: #999B9A;
+    --font-family: 'Museo Sans Cyrl', sans-serif;
+}
+
+[data-theme="dark"] {
+    --background: #343434;
+    --text-color1: #eeeeee;
+    --text-color2: #777777;
+    --card-color: #414141;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    font-family: var(--font-family);
+    overflow-x: hidden;
+}
+
+.container-block{
+    max-width: 1160px;
+    margin: 0 auto;
+}

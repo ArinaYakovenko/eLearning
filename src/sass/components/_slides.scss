@@ -1,0 +1,122 @@
+.carousel {
+    width: 100%;
+    position: relative;
+
+    .carousel-item {
+        .carousel-block {
+            display: flex;
+            gap: 25px;
+            width: 850px;
+
+            .carousel-img {
+                position: relative;
+
+                p {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    max-width: 146px;
+                    color: #FFF;
+                    font-size: 25px;
+                    text-align: center;
+
+                }
+            }
+
+            .last {
+                background-color: var(--green);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 400px;
+                border-radius: 20px;
+
+                img {
+                    width: 61.419px;
+                    height: 41.606px;
+                    margin-bottom: 10px;
+
+                }
+
+                p {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    transform: none;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .carousel-item-start {
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item-next {
+        transform: translateY(100%);
+        transition: transform 0s ease-in-out;
+    }
+
+    .carousel-item-prev {
+        transform: translateY(-100%);
+        transition: transform 0s ease-in-out;
+    }
+
+    .active.carousel-item-end {
+        transform: translateY(100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-indicators {
+        width: 25px;
+        position: absolute;
+        left: auto;
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+
+        button {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin: 2px;
+            padding: 0;
+        }
+
+        button.active {
+            width: 25px;
+            height: 25px;
+            opacity: 1;
+        }
+    }
+
+    .carousel-indicators [data-bs-target] {
+        box-sizing: content-box;
+        flex: 0 1 auto;
+        padding: 0;
+        cursor: pointer;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 0;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        opacity: .5;
+        transition: opacity .6s ease, 0.3s width ease, 0.3s height ease;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+}
