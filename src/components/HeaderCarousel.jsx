@@ -1,4 +1,3 @@
-// import logo from '../assets/images/LogoCol.svg';
 import services from '../assets/images/services.png';
 import inst_design from '../assets/images/instr_design.png';
 import el_develop from '../assets/images/eL_development.png';
@@ -8,7 +7,7 @@ import letter from '../assets/images/letter.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 
-function UncontrolledExample() {
+function HeaderCarousel() {
     return (
         <div className="carousel">
             <Carousel>
@@ -55,4 +54,4 @@ function UncontrolledExample() {
     );
 }
 
-export default UncontrolledExample;
+export default HeaderCarousel;

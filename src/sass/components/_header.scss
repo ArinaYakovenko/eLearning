@@ -1,16 +1,17 @@
 header {
-    background-image: url(../../assets/images/welcome_bg.png);
+    background-image: url('../../assets/images/welcome_bg.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 145px 0 136px 0;
     border-bottom: 10px solid var(--green);
+    color: var(--text-header);
 
     .welcome-page {
         display: flex;
 
         .toggle-block {
-            background-color: var(--background);
+            background-color: var(--background-1);
             width: 260px;
             height: 400px;
             height: auto;
@@ -31,41 +32,118 @@ header {
                 text-align: center;
                 font-size: 16px;
                 padding-top: 15px;
-                color: var(--1, #424242);
                 margin: 0;
             }
 
             .toggle-mode {
                 margin-top: 60px;
-                width: 110px;
-                background-color: var(--grey);
-                border-radius: 15px;
                 display: flex;
                 align-items: center;
                 justify-content: start;
                 position: relative;
+                background-color: var(--background-2);
+                border-radius: 15px;
 
-                p {
-                    padding: 8px 0 8px 10px;
-                    font-size: 12px;
-                    text-transform: uppercase;
-                    margin: 0;
-                }
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 110px;
+                    height: 30px;
 
-                .toggle-img {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    border: 1px solid var(--grey);
-                    background-color: var(--background);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: absolute;
-                    right: -15px;
+                    input {
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                        transition: 1s transform ease;
+                    }
+
+                    .slider {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+
+                        .mode-name {
+                            text-align: start;
+                            padding: 6px 0 8px 10px;
+                            font-size: 12px;
+                            text-transform: uppercase;
+                            margin: 0;
+                            transition: 1s text-align ease;
+                        }
+                    }
+
+                    .slider::before {
+                        position: absolute;
+                        content: url('../../assets/images/daymode.svg');
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        border: 1px solid var(--background-2);
+                        background-color: #FFF;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        right: -15px;
+                        top: -5px;
+                        transition: 1s transform ease;
+                    }
+
+                    input:checked+.slider::before {
+                        transform: translateX(-100px);
+                        content: url('../../assets/images/nightmode.svg');
+                    }
+
+                    input:checked+.slider .mode-name {
+                        padding: 6px 10px 8px 0;
+                        text-align: end;
+                    }
 
                 }
             }
+        }
+    }
+}
+
+nav {
+    width: 100%;
+    background-color: var(--navbar-background);
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 45px;
+
+        img {
+            width: 107px;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 37px;
+            margin: 0;
+
+            li {
+
+                a {
+                    font-size: 14px;
+                    color: var(--color-white);
+                    transition: color 0.3s ease;
+                }
+            }
+
+            li:hover {
+                a {
+                    color: rgb(219, 212, 212);
+                }
+            }
+
         }
     }
 }
