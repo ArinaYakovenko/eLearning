@@ -1,0 +1,39 @@
+.occupation-block {
+    display: flex;
+    margin: 10px 40px 0 0;
+
+    p {
+        margin-right: 10px;
+    }
+
+    .occupations {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5px;
+
+        .selectedOccupation{
+            display: flex;
+            align-items: center;
+        }
+
+        .occupation {
+            padding: 3px 18px;
+            background-color: var(--search-background);
+            color: var(--text-color);
+            border-radius: 15px;
+            cursor: pointer;
+
+            font-size: 16px;
+        }
+
+        svg {
+            cursor: pointer;
+            margin-left: 7px;
+
+            path {
+                stroke: var(--text-color);
+            }
+        }
+    }
+}

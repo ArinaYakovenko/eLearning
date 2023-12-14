@@ -1,13 +1,16 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from 'react-bootstrap/Carousel';
+import '../sass/components/__carousel.scss'
+
+//Images
 import services from '../assets/images/services.png';
 import inst_design from '../assets/images/instr_design.png';
 import el_develop from '../assets/images/eL_development.png';
 import el_packages from '../assets/images/eL_packages.png';
 import letter from '../assets/images/letter.svg';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Carousel from 'react-bootstrap/Carousel';
-
-function HeaderCarousel() {
+const HeaderCarousel = () => {
     return (
         <div className="carousel">
             <Carousel>

@@ -47,6 +47,56 @@
                     transform: none;
                     margin: 0;
                 }
+
+            }
+
+        }
+
+        @media (max-width: 1200px) {
+            .carousel-block {
+                width: 600px;
+
+                .carousel-img {
+                    img {
+                        width: 300px;
+                    }
+                }
+
+                .last {
+                    width: 300px;
+                }
+            }
+        }
+
+        @media (max-width: 930px) {
+            .carousel-block {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+
+                .carousel-img {
+                    img {
+                        width: 250px;
+                    }
+                }
+
+                .last {
+                    width: 250px;
+                }
+            }
+        }
+
+        @media (max-width: 600px) {
+            .carousel-block {
+                .carousel-img {
+                    img {
+                        width: 200px;
+                    }
+                }
+
+                .last {
+                    width: 200px;
+                }
             }
         }
     }
@@ -98,6 +148,25 @@
             width: 25px;
             height: 25px;
             opacity: 1;
+        }
+
+        @media (max-width: 930px) {
+            left: auto;
+            right: auto;
+            bottom: -60px;
+            top: auto;
+            flex-direction: row;
+            width: 100%;
+
+            button {
+                width: 13px;
+                height: 13px;
+            }
+
+            button.active {
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 

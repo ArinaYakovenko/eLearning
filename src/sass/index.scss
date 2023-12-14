@@ -1,7 +1,68 @@
-@import './base/base';
+:root {
+    --background-1: #FFFF;
+    --background-2: #EBEBEB;
+    --main-background: #FFFF;
+    --text-color: #424242;
+    --navbar-background: #343434;
+    --search-background: #EBEBEB;
+    --color-white: #FFFF;
 
-@import './components/header';
-@import './components/slides';
-@import './components/main';
-@import './components/feedback';
-@import './components/footer';
+    --green: #3D948E;
+    --yellow: #DCCE90;
+    --grey: #B5B7B6;
+    --font-family: 'Museo Sans Cyrl', sans-serif;
+}
+
+[data-theme="dark"] {
+    --background-1: #414141;
+    --background-2: #343434;
+    --main-background: #343434;
+    --text-color: #FFF;
+    --navbar-background: #414141;
+    --search-background: #414141;
+}
+
+*,
+*::before,
+*::after,
+p,
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease-in-out, 0.1s color ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.App {
+    font-family: var(--font-family);
+    overflow-x: hidden;
+}
+
+.container-block {
+    max-width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+        max-width: 930px;
+    }
+
+    @media (max-width: 930px) {
+        max-width: 600px;
+    }
+
+    @media (max-width: 600px){
+        width: 450px;
+    }
+}

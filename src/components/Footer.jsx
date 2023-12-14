@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import '../sass/sections/__footer.scss'
 
-export default function Footer() {
+const Footer = () => {
   return (
     <div>
     </div>
   )
 }
+
+export default Footer;

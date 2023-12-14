@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function SendFeedback() {
+const SendFeedback = () => {
     return (
         <div>SendFeedback</div>
     )
 }
+
+export default SendFeedback;

@@ -1,0 +1,93 @@
+.main-page {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 65px 0 0 60px;
+    background-color: var(--main-background);
+    color: var(--text-color);
+
+    h1 {
+        font-size: 50px;
+        color: #999B9A;
+        margin-bottom: 35px;
+    }
+
+    .sort-block {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        height: 70px;
+
+        .search-block {
+            position: relative;
+
+            input {
+                width: 300px;
+                height: 45px;
+                border-radius: 27.5px;
+                border: none;
+                background-color: var(--search-background);
+                font-size: 16px;
+                padding-left: 20px;
+            }
+
+            input::placeholder,
+            input:focus,
+            input:active,
+            input:valid {
+                color: var(--text-color);
+            }
+
+            span {
+                position: absolute;
+                right: 20px;
+                top: 8px;
+
+                svg {
+                    g {
+                        path {
+                            stroke: var(--text-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .services {
+        .services-card {
+            margin-top: 50px;
+            display: flex;
+            gap: 110px;
+            justify-content: start;
+        }
+
+        .pagination {
+            margin-top: 75px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+
+            .pagination-number {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+
+            .previous{
+                margin-right: 25px;
+            }
+
+            .next{
+                margin-left: 25px;
+            }
+        }
+    }
+}
