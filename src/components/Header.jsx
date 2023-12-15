@@ -1,5 +1,4 @@
 import React from 'react';
-import '../sass/sections/__header.scss'
 import HeaderCarousel from './HeaderCarousel';
 import logo from '../assets/images/LogoCol.svg';
 

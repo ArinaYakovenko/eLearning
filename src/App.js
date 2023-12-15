@@ -3,12 +3,12 @@ import Header from './components/Header';
 import MainPage from './components/MainPage';
 import SendFeedback from './components/SendFeedback';
 import Footer from './components/Footer';
-import '../src/sass/index.scss'
+import './sass/index.scss';
 
 const App = () => {
 
   return (
-    <div>
+    <div className='App'>
       <Header />
       <MainPage />
       <SendFeedback />

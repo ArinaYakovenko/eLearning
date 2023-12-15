@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import '../sass/components/__card.scss'
+import React from 'react';
 
 const Card = ({ color, type, card }) => {
-    // console.log('select')
 
     return (
         <div className='card-block'>

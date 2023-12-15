@@ -31,13 +31,12 @@
                 align-items: center;
                 justify-content: center;
                 width: 400px;
-                border-radius: 20px;
+                border-radius: 10px;
 
-                img {
+                .letter {
                     width: 61.419px;
                     height: 41.606px;
                     margin-bottom: 10px;
-
                 }
 
                 p {
@@ -52,23 +51,49 @@
 
         }
 
-        @media (max-width: 1200px) {
+        @include xl {
             .carousel-block {
-                width: 600px;
+                width: 700px;
 
                 .carousel-img {
                     img {
-                        width: 300px;
+                        width: 330px;
                     }
                 }
 
                 .last {
-                    width: 300px;
+                    width: 330px;
                 }
             }
         }
 
-        @media (max-width: 930px) {
+        @include lg {
+            .carousel-block {
+                width: 510px;
+                gap: 15px;
+
+                .carousel-img {
+                    img {
+                        width: 245px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+                }
+
+                .last {
+                    width: 245px;
+
+                    .letter {
+                        width: 45px;
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+
+        @include md {
             .carousel-block {
                 width: 100%;
                 display: flex;
@@ -76,26 +101,35 @@
 
                 .carousel-img {
                     img {
-                        width: 250px;
+                        width: 220px;
                     }
                 }
 
                 .last {
-                    width: 250px;
+                    width: 220px;
                 }
             }
         }
 
-        @media (max-width: 600px) {
+        @include sm {
             .carousel-block {
                 .carousel-img {
                     img {
-                        width: 200px;
+                        width: 150px;
+                    }
+
+                    p {
+                        font-size: 15px;
                     }
                 }
 
                 .last {
-                    width: 200px;
+                    width: 150px;
+
+                    .letter {
+                        width: 35px;
+                        margin-bottom: 0;
+                    }
                 }
             }
         }
@@ -150,22 +184,34 @@
             opacity: 1;
         }
 
-        @media (max-width: 930px) {
+        @include md {
             left: auto;
             right: auto;
-            bottom: -60px;
+            bottom: -45px;
             top: auto;
             flex-direction: row;
             width: 100%;
 
             button {
-                width: 13px;
-                height: 13px;
+                width: 10px;
+                height: 10px;
             }
 
             button.active {
-                width: 20px;
-                height: 20px;
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        @include sm{
+            button {
+                width: 9px;
+                height: 9px;
+            }
+
+            button.active {
+                width: 13px;
+                height: 13px;
             }
         }
     }
@@ -187,5 +233,29 @@
     .carousel-control-prev,
     .carousel-control-next {
         display: none;
+
+        @include md {
+            width: 2rem;
+            top: 45%;
+            bottom: 0;
+            display: block;
+
+            span {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+
+        @include sm {
+            width: 2rem;
+            top: 45%;
+            bottom: 0;
+            display: block;
+
+            span {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
     }
 }

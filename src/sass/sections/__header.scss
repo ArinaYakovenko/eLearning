@@ -1,3 +1,5 @@
+@import '../_breakpoints.scss';
+
 header {
     background-image: url('../../assets/images/welcome_bg.png');
     background-position: center;
@@ -7,17 +9,20 @@ header {
     border-bottom: 10px solid var(--green);
     color: var(--text-color);
 
-    @media (max-width: 1200px) {
+    @include xl {
         padding: 120px 0 115px 0;
     }
 
-    @media (max-width: 930px) {
+    @include lg {
         padding: 100px 0 95px 0;
+    }
 
+    @include md {
         .welcome-page {
             flex-direction: column;
         }
     }
+
 
     .welcome-page {
         display: flex;
@@ -46,7 +51,7 @@ header {
                 padding-top: 15px;
                 margin: 0;
 
-                @media (max-width: 600px){
+                @include md {
                     display: none;
                 }
             }
@@ -59,14 +64,6 @@ header {
                 position: relative;
                 background-color: var(--background-2);
                 border-radius: 15px;
-
-                @media (max-width: 1200px) {
-                    margin-top: 45px;
-                }
-
-                @media (max-width: 930px) {
-                    margin:0;
-                }
 
                 .switch {
                     position: relative;
@@ -97,7 +94,7 @@ header {
                             margin: 0;
                             transition: 1s text-align ease;
 
-                            @media (max-width: 600px){
+                            @include md {
                                 display: block;
                             }
                         }
@@ -133,20 +130,43 @@ header {
                 }
             }
 
-            @media (max-width: 1200px) {
-                width: 220px;
-                height: 300px;
-                padding: 60px 30px 0 30px;
+            @include xl {
+                width: 300px;
+                height: 330px;
+                padding: 100px 30px 0 30px;
 
                 .logo {
                     width: 100%;
                 }
+
+                .toggle-mode {
+                    margin-top: 40px;
+                }
             }
 
-            @media (max-width: 930px) {
+            @include lg {
+                width: 220px;
+                height: 250px;
+                margin-right: 15px;
+                padding: 50px 30px 0 30px;
+
+                .logo {
+                    width: 100%;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+
+                .toggle-mode {
+                    margin-top: 40px;
+                }
+            }
+
+            @include md {
                 width: 100%;
                 height: 100%;
-                padding: 10px 0;
+                padding: 15px 0;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-around;
@@ -156,8 +176,8 @@ header {
                     max-width: 100px;
                 }
 
-                p {
-                    padding: 0;
+                .toggle-mode {
+                    margin-top: 0;
                 }
             }
         }
@@ -174,6 +194,17 @@ nav {
         align-items: center;
         height: 45px;
 
+        @include lg {
+            height: 100%;
+            flex-direction: column;
+            align-items: start;
+            padding: 10px 0;
+
+            img {
+                margin-bottom: 10px;
+            }
+        }
+
         img {
             width: 107px;
         }
@@ -186,7 +217,6 @@ nav {
             margin: 0;
 
             li {
-
                 a {
                     font-size: 14px;
                     color: var(--color-white);
@@ -200,6 +230,37 @@ nav {
                 }
             }
 
+            @include xl {
+                gap: 20px;
+            }
+
+            @include lg {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                li {
+                    width: 25%;
+                }
+            }
+
+            @include md {
+                gap: 5px;
+
+                li {
+                    width: 45%;
+                }
+            }
+
+            @include sm {
+                gap: 3px;
+
+                li {
+                    a {
+                        font-size: 12px;
+                    }
+                }
+            }
         }
     }
 }

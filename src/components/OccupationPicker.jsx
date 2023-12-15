@@ -1,5 +1,4 @@
 import React from 'react';
-import '../sass/components/__occupationpicker.scss'
 
 const OccupationPicker = (props) => {
     const {

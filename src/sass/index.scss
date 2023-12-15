@@ -1,26 +1,4 @@
-:root {
-    --background-1: #FFFF;
-    --background-2: #EBEBEB;
-    --main-background: #FFFF;
-    --text-color: #424242;
-    --navbar-background: #343434;
-    --search-background: #EBEBEB;
-    --color-white: #FFFF;
-
-    --green: #3D948E;
-    --yellow: #DCCE90;
-    --grey: #B5B7B6;
-    --font-family: 'Museo Sans Cyrl', sans-serif;
-}
-
-[data-theme="dark"] {
-    --background-1: #414141;
-    --background-2: #343434;
-    --main-background: #343434;
-    --text-color: #FFF;
-    --navbar-background: #414141;
-    --search-background: #414141;
-}
+@import './base/base';
 
 *,
 *::before,
@@ -46,23 +24,32 @@ ol {
 
 .App {
     font-family: var(--font-family);
-    overflow-x: hidden;
 }
 
 .container-block {
-    max-width: 1180px;
     padding: 0 10px;
     margin: 0 auto;
+    max-width: 1180px;
+    position: relative;
 
-    @media (max-width: 1200px) {
-        max-width: 930px;
+
+    @include xl {
+        /* Стилі для розмірів екранів до 'xl' (1200px) і нище */
+        max-width: 1024px;
     }
 
-    @media (max-width: 930px) {
-        max-width: 600px;
+    @include lg {
+        /* Стилі для розмірів екранів до 'lg' (1024px) і нище */
+        max-width: 760px;
     }
 
-    @media (max-width: 600px){
-        width: 450px;
+    @include md {
+        /* Стилі для розмірів екранів до 'md' (768px) і нище */
+        max-width: 480px;
+    }
+
+    @include sm {
+        /* Стилі для розмірів екранів до 'sm' (480px) і нище */
+        max-width: 350px;
     }
 }

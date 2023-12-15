@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import Card from './Card';
 import ColorPicker from './ColorPicker';
 import OccupationPicker from './OccupationPicker';
-import '../sass/sections/__main.scss'
+
+import man from '../assets/images/DesignMan.png';
+import instruct1 from '../assets/images/Instructional1.png';
+import instruct2 from '../assets/images/Instructional2.png';
+import cheked from '../assets/images/cheked.svg';
 
 const MainPage = () => {
   const [toggleColors, setToggleColors] = useState(false);
@@ -164,15 +168,19 @@ const MainPage = () => {
               </g>
             </svg>
             {Array.from({ length: totalPagesToShow }, (_, index) => {
+              console.log(index)
               const pageNumber = index + 1;
               const showPage = hasEnoughItems ? pageNumber : totalPages === 1 ? pageNumber : null;
+
               return (
                 <div
                   className='pagination-number'
                   style={{
-                    background: currentPage === showPage ? `var(--search-background)` : 'inherit',
+                    background: totalPages === index + 1 ? `var(--search-background)` : 'inherit',
+                    opacity: totalPages !== index + 1 ? 0.2 : 1,
                     cursor: currentPage === showPage ? 'default' : 'pointer',
-                    pointerEvents: currentPage === showPage ? 'none' : 'auto'
+                    pointerEvents: currentPage === showPage ? 'none' : 'auto',
+
                   }}
                   key={pageNumber}
                   onClick={currentPage === showPage ? undefined : () => handlePageChange(showPage)}
@@ -189,6 +197,45 @@ const MainPage = () => {
             </svg>
           </div>
         </div>
+
+        <section className='design-learning'>
+          <img src={man} alt="DesignMan" />
+          <h1>We Design Learning.</h1>
+          <p>What We Can Do For You?</p>
+          <button>Know more</button>
+        </section>
+
+        <section className='instructional-design'>
+          <div className="design-block">
+            <h1>Instructional Design</h1>
+            <div className="design-info">
+              <img src={instruct1} alt="instruct1" />
+              <div className='info'>
+                <h4>We know learning inside and out</h4>
+                <p>Our instructional design team will work hard to align your business goals with your learning objectives to ensure the training supports your business strategies.</p>
+                <ul>
+                  <li><span><img src={cheked} alt="cheked" /></span> Each project requires a unique approach, and we are ready for the challenge</li>
+                  <li><span><img src={cheked} alt="cheked" /></span> Our expertise in the training and development industry will make your project a successe</li>
+                  <li><span><img src={cheked} alt="cheked" /></span> Your goals and deadlines are our priority</li>
+                </ul>
+              </div>
+            </div>
+            <div className="design-info">
+              <div className='info'>
+                <h4>Our clients love the work we do</h4>
+                <p>We pride ourselves on developing training strategies with the learners in mind, ensuring your time and resources are well utilized.</p>
+                <ul>
+                  <li><span><img src={cheked} alt="cheked" /></span> We start each project with a careful analysiys of your
+                    learning needs</li>
+                  <li><span><img src={cheked} alt="cheked" /></span> We constantly look for ways to save your time and money while exceeding your expectations</li>
+                  <li><span><img src={cheked} alt="cheked" /></span> We don't stop working until you are satisfied with the products
+                    we deliver</li>
+                </ul>
+              </div>
+              <img src={instruct2} alt="instruct2" />
+            </div>
+          </div>
+        </section>
       </div>
     </div >
   )

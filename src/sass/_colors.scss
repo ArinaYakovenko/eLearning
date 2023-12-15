@@ -1,0 +1,23 @@
+:root {
+    --background-1: #FFFF;
+    --background-2: #EBEBEB;
+    --main-background: #FFFF;
+    --text-color: #424242;
+    --navbar-background: #343434;
+    --search-background: #EBEBEB;
+    --color-white: #FFFF;
+
+    --green: #3D948E;
+    --yellow: #DCCE90;
+    --grey: #B5B7B6;
+    --font-family: 'Museo Sans Cyrl', sans-serif;
+}
+
+[data-theme="dark"] {
+    --background-1: #414141;
+    --background-2: #343434;
+    --main-background: #343434;
+    --text-color: #FFF;
+    --navbar-background: #414141;
+    --search-background: #414141;
+}

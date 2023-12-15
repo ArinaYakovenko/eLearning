@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import '../sass/components/__colorpicker.scss'
+import React from 'react';
 
 const ColorPicker = (props) => {
     const {

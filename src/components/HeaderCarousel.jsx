@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
-import '../sass/components/__carousel.scss'
 
 //Images
 import services from '../assets/images/services.png';
@@ -47,7 +46,7 @@ const HeaderCarousel = () => {
                             <p>eLearning Packages</p>
                         </div>
                         <div className="carousel-img last">
-                            <img src={letter} alt="letter" />
+                            <img className='letter' src={letter} alt="letter" />
                             <p>Contact us</p>
                         </div>
                     </div>
