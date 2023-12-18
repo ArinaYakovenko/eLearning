@@ -5,12 +5,14 @@
     --text-color: #424242;
     --navbar-background: #343434;
     --search-background: #EBEBEB;
-    --color-white: #FFFF;
-
+    --white: #FFFF;
+    --chat-text: rgba(56, 56, 56, 0.20);
     --green: #3D948E;
+    --green-light: #29B4AD;
     --yellow: #DCCE90;
     --grey: #B5B7B6;
     --font-family: 'Museo Sans Cyrl', sans-serif;
+    --messages-bg: rgba(52, 52, 52, 0.05);
 }
 
 [data-theme="dark"] {
@@ -20,4 +22,6 @@
     --text-color: #FFF;
     --navbar-background: #414141;
     --search-background: #414141;
+    --chat-text: rgba(255, 255, 255, 0.20);
+    --messages-bg: rgba(255, 255, 255, 0.05);
 }

@@ -4,6 +4,7 @@ import MainPage from './components/MainPage';
 import SendFeedback from './components/SendFeedback';
 import Footer from './components/Footer';
 import './sass/index.scss';
+import Chat from './components/Chat';
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
       <MainPage />
       <SendFeedback />
       <Footer />
+      <Chat />
     </div>
   );
 };

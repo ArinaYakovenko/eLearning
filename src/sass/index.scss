@@ -22,8 +22,13 @@ ol {
     list-style: none;
 }
 
+input{
+    outline: none;
+}
+
 .App {
     font-family: var(--font-family);
+    position: relative;
 }
 
 .container-block {

@@ -20,7 +20,7 @@ const Header = () => {
   }
 
   return (<>
-    <header>
+    <header id='header'>
       <div className="container-block">
         <div className="welcome-page">
           <div className="toggle-block">
@@ -42,8 +42,8 @@ const Header = () => {
         <div className="menu">
           <img src={logo} alt="logo" />
           <ul className='navigation'>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#">Instructional Design</a></li>
             <li><a href="#">eLearning Development</a></li>
             <li><a href="#">eLearning Price Quote</a></li>

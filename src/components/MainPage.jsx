@@ -7,6 +7,7 @@ import man from '../assets/images/DesignMan.png';
 import instruct1 from '../assets/images/Instructional1.png';
 import instruct2 from '../assets/images/Instructional2.png';
 import cheked from '../assets/images/cheked.svg';
+import SendFeedback from './SendFeedback';
 
 const MainPage = () => {
   const [toggleColors, setToggleColors] = useState(false);
@@ -118,83 +119,85 @@ const MainPage = () => {
   };
 
   return (
-    <div className='main-page'>
+    <main className='main-page'>
       <div className="container-block">
-        <h1>Services We Provide</h1>
-        <div className="sort-block">
-          <div className="search-block">
-            <input
-              type="text"
-              placeholder="Search"
-              value={searchText}
-              onChange={handleInputChange}
-            />
-            <span><svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g opacity="0.75">
-                <path d="M10.9167 10.9166L18 18" stroke="#343434" strokeWidth="1.7" strokeLinecap="round" />
-                <path d="M10.6735 10.6736C12.8865 8.46064 12.8865 4.87271 10.6735 2.65973C8.46056 0.446756 4.87262 0.446756 2.65969 2.65973C0.446669 4.87271 0.446669 8.46064 2.65969 10.6736C4.87262 12.8866 8.46056 12.8866 10.6735 10.6736Z" stroke="#343434" strokeWidth="1.7" strokeLinecap="round" />
-              </g>
-            </svg></span>
+        <div id="services">
+          <h1>Services We Provide</h1>
+          <div className="sort-block">
+            <div className="search-block">
+              <input
+                type="text"
+                placeholder="Search"
+                value={searchText}
+                onChange={handleInputChange}
+              />
+              <span><svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.75">
+                  <path d="M10.9167 10.9166L18 18" stroke="#343434" strokeWidth="1.7" strokeLinecap="round" />
+                  <path d="M10.6735 10.6736C12.8865 8.46064 12.8865 4.87271 10.6735 2.65973C8.46056 0.446756 4.87262 0.446756 2.65969 2.65973C0.446669 4.87271 0.446669 8.46064 2.65969 10.6736C4.87262 12.8866 8.46056 12.8866 10.6735 10.6736Z" stroke="#343434" strokeWidth="1.7" strokeLinecap="round" />
+                </g>
+              </svg></span>
+            </div>
+            <ColorPicker {...{
+              selectColor,
+              selectType,
+              toggleColors,
+              colors,
+              setToggleColors,
+              setSelectColor,
+              setSelectType
+            }} />
+            <OccupationPicker {...{
+              occupation,
+              toggleOccupations,
+              setToggleOccupations,
+              selectOccupation,
+              setSelectOccupation
+            }} />
           </div>
-          <ColorPicker {...{
-            selectColor,
-            selectType,
-            toggleColors,
-            colors,
-            setToggleColors,
-            setSelectColor,
-            setSelectType
-          }} />
-          <OccupationPicker {...{
-            occupation,
-            toggleOccupations,
-            setToggleOccupations,
-            selectOccupation,
-            setSelectOccupation
-          }} />
-        </div>
-        <div className='services'>
-          <div className="services-card">
-            {filteredCards.map((card, index) => (
-              <Card key={index} color={selectColor} type={selectType} card={card} />
-            ))}
-          </div>
-          <div className="pagination">
-            <svg
-              className='previous' xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
-              <g opacity="0.2">
-                <path d="M2 8L8 2L2 8ZM2 8L8 14L2 8Z" fill="var(--text-color)" />
-                <path d="M8 2L2 8L8 14" stroke="var(--text-color)" stroke-width="2.25" stroke-linecap="round" />
-              </g>
-            </svg>
-            {Array.from({ length: totalPagesToShow }, (_, index) => {
-              console.log(index)
-              const pageNumber = index + 1;
-              const showPage = hasEnoughItems ? pageNumber : totalPages === 1 ? pageNumber : null;
+          <div className='services'>
+            <div className="services-card">
+              {filteredCards.map((card, index) => (
+                <Card key={index} color={selectColor} type={selectType} card={card} />
+              ))}
+            </div>
+            <div className="pagination">
+              <svg
+                className='previous' xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                <g opacity="0.2">
+                  <path d="M2 8L8 2L2 8ZM2 8L8 14L2 8Z" fill="var(--text-color)" />
+                  <path d="M8 2L2 8L8 14" stroke="var(--text-color)" stroke-width="2.25" stroke-linecap="round" />
+                </g>
+              </svg>
+              {Array.from({ length: totalPagesToShow }, (_, index) => {
+                console.log(index)
+                const pageNumber = index + 1;
+                const showPage = hasEnoughItems ? pageNumber : totalPages === 1 ? pageNumber : null;
 
-              return (
-                <div
-                  className='pagination-number'
-                  style={{
-                    background: totalPages === index + 1 ? `var(--search-background)` : 'inherit',
-                    opacity: totalPages !== index + 1 ? 0.2 : 1,
-                    cursor: currentPage === showPage ? 'default' : 'pointer',
-                    pointerEvents: currentPage === showPage ? 'none' : 'auto',
+                return (
+                  <div
+                    className='pagination-number'
+                    style={{
+                      background: totalPages === index + 1 ? `var(--search-background)` : 'inherit',
+                      opacity: totalPages !== index + 1 ? 0.2 : 1,
+                      cursor: currentPage === showPage ? 'default' : 'pointer',
+                      pointerEvents: currentPage === showPage ? 'none' : 'auto',
 
-                  }}
-                  key={pageNumber}
-                  onClick={currentPage === showPage ? undefined : () => handlePageChange(showPage)}
-                >
-                  {showPage}
-                </div>
-              );
-            })}
-            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
-              <g opacity="0.2">
-                <path d="M8 8L2 2L8 8ZM8 8L2 14L8 8Z" fill="var(--text-color)" />
-                <path d="M2 2L8 8L2 14" stroke="var(--text-color)" stroke-width="2.25" stroke-linecap="round" />
-              </g>
-            </svg>
+                    }}
+                    key={pageNumber}
+                    onClick={currentPage === showPage ? undefined : () => handlePageChange(showPage)}
+                  >
+                    {showPage}
+                  </div>
+                );
+              })}
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16" fill="none">
+                <g opacity="0.2">
+                  <path d="M8 8L2 2L8 8ZM8 8L2 14L8 8Z" fill="var(--text-color)" />
+                  <path d="M2 2L8 8L2 14" stroke="var(--text-color)" stroke-width="2.25" stroke-linecap="round" />
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
 
@@ -237,7 +240,7 @@ const MainPage = () => {
           </div>
         </section>
       </div>
-    </div >
+    </main >
   )
 }
 
