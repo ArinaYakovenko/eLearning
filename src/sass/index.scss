@@ -26,8 +26,11 @@ input{
     outline: none;
 }
 
-.App {
+body{
     font-family: var(--font-family);
+}
+
+.App {
     position: relative;
 }
 

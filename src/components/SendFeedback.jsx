@@ -2,7 +2,7 @@ import React from 'react'
 
 const SendFeedback = () => {
     return (
-        <div className='send-feedback'>
+        <div id='feedback' className='send-feedback'>
             <div className="container-block">
                 <h1>Talk To Us About Your Project</h1>
                 <p>We will never send spam or add you to a mailing list</p>

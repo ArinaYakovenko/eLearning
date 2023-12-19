@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 import letter from '../assets/images/letter.svg';
 import avatar from '../assets/images/user-avatar.svg';
 import dots from '../assets/images/ellipsis-v-solid.svg';
-import attach from '../assets/images/paperclip-solid.svg';
-import plane from '../assets/images/paper-plane.svg'
 
 const Chat = () => {
     const [openChat, setOpenChat] = useState(false);
     const [messages, setMessages] = useState([]);
     const [inputValue, setInputValue] = useState('');
-    console.log(messages)
+    const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
@@ -39,7 +37,7 @@ const Chat = () => {
                     <div className="chat-main">
                         <ul>
                             {messages.map((message, index) => (
-                                <li key={index}>{message}</li>
+                                <li key={index}>{message}<span>{currentTime}</span></li>
                             ))}
                         </ul>
                     </div>

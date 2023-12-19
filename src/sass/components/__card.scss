@@ -3,6 +3,11 @@
     flex-direction: column;
     max-width: 202px;
 
+    @include sm {
+        align-items: center;
+        text-align: center;
+    }
+
     .card-img {
         width: 85px;
         height: 85px;

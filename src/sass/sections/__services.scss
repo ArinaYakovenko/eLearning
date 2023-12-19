@@ -1,0 +1,141 @@
+#services {
+    padding: 65px 0 30px 60px;
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+
+    .decoration {
+        position: absolute;
+        top: 95px;
+        left: 0;
+        z-index: 1;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: #999B9A;
+        margin-bottom: 35px;
+    }
+
+    .sort-block {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        height: 70px;
+        width: 100%;
+
+        .search-block {
+            position: relative;
+
+            input {
+                width: 300px;
+                height: 45px;
+                border-radius: 27.5px;
+                border: none;
+                background-color: var(--search-background);
+                font-size: 16px;
+                padding-left: 20px;
+            }
+
+            input::placeholder,
+            input:focus,
+            input:active,
+            input:valid {
+                color: var(--text-color);
+            }
+
+            span {
+                position: absolute;
+                right: 20px;
+                top: 8px;
+
+                svg {
+                    g {
+                        path {
+                            stroke: var(--text-color);
+                        }
+                    }
+                }
+            }
+        }
+
+        @include lg {
+            flex-wrap: wrap;
+            height: 100%;
+            column-gap: 90px;
+            row-gap: 25px;
+        }
+
+        @include md {
+            flex-direction: column;
+            height: 100%;
+            column-gap: 30px;
+            row-gap: 20px;
+        }
+
+        @include sm {
+            justify-content: center;
+        }
+    }
+
+    .services {
+        .services-card {
+            margin-top: 50px;
+            display: flex;
+            gap: 110px;
+            justify-content: start;
+
+            @include lg {
+                flex-wrap: wrap;
+                justify-content: space-between;
+                column-gap: 0;
+                row-gap: 30px;
+            }
+
+            @include sm {
+                justify-content: center;
+            }
+        }
+
+        .pagination {
+            margin-top: 75px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+
+            .pagination-number {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+
+            .previous {
+                margin-right: 25px;
+            }
+
+            .next {
+                margin-left: 25px;
+            }
+        }
+    }
+
+    @include md {
+        padding-top: 30px;
+
+        h1 {
+            font-size: 35px;
+        }
+    }
+
+    @include md {
+        h1 {
+            margin-bottom: 20px;
+        }
+    }
+}

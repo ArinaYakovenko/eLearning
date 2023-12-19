@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeaderCarousel from './HeaderCarousel';
 import logo from '../assets/images/LogoCol.svg';
 
@@ -44,11 +44,11 @@ const Header = () => {
           <ul className='navigation'>
             <li><a href="#header">Home</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#">Instructional Design</a></li>
+            <li><a href="#design">Instructional Design</a></li>
             <li><a href="#">eLearning Development</a></li>
             <li><a href="#">eLearning Price Quote</a></li>
             <li><a href="#">eLearning Packages</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#feedback">Contact</a></li>
           </ul>
         </div>
       </div>
