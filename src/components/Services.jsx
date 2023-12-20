@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import ColorPicker from './ColorPicker';
 import OccupationPicker from './OccupationPicker';
 
 // images
-import vectore from '../assets/images/Vector 10.png'
 
-const Services = () => {
+const Services = ({ scroll }) => {
+    console.log(scroll);
     const [toggleColors, setToggleColors] = useState(false);
     const [selectColor, setSelectColor] = useState('yellow');
     const [selectType, setSelectType] = useState('circle');
@@ -112,11 +112,25 @@ const Services = () => {
         setCurrentPage(pageNumber);
     };
 
+    const [opacity, setOpacity] = useState(0.1);
+    
+    useEffect(() => {
+        const newOpacity = scroll >= 700 ? Math.min((scroll - 700) / 200, 1) : 0.1;
+        if (newOpacity >= 0.1) {
+            setOpacity(newOpacity);
+        }
+    }, [scroll]);
+
     return (
         <div id="services">
-            <svg className='decoration' xmlns="http://www.w3.org/2000/svg" width="1162" height="956" viewBox="0 0 1162 956" fill="none">
-                <path d="M2 0V592.017C2 603.063 10.9543 612.017 22 612.017H1140C1151.05 612.017 1160 620.971 1160 632.017V955.5" stroke="#343434" stroke-opacity="0.1" stroke-width="3" />
-            </svg>
+            <div className="decoration">
+                <div className="decoration-circle-top"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1162" height="956" viewBox="0 0 1162 956" fill="none">
+                    <path id="gradientPath" d="M2 0V592.017C2 603.063 10.9543 612.017 22 612.017H1140C1151.05 612.017 1160 620.971 1160 632.017V955.5" stroke={scroll >= 700 ? 'var(--green)' : "#343434"}
+                        strokeOpacity={opacity} strokeWidth="3" />
+                </svg>
+                <div className="decoration-circle-bottom"></div>
+            </div>
             <div className="container-block">
                 <h1>Services We Provide</h1>
                 <div className="sort-block">

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap');
+
 footer {
     .footer-block {
         padding: 65px 0;
@@ -30,6 +31,37 @@ footer {
                 li:last-child {
                     grid-column-start: 3;
                     grid-column-end: 4;
+                }
+
+                @include xl {
+                    ul {
+                        grid-template-columns: repeat(2, 1fr);
+                        text-align: center;
+                        column-gap: 120px;
+                    }
+
+                    li:last-child {
+                        grid-column-start: 2;
+                        grid-column-end: 2;
+                    }
+                }
+
+                @include sm {
+                    ul {
+                        grid-template-columns: repeat(1, 1fr);
+                        text-align: center;
+                        column-gap: 10px;
+                    }
+                }
+            }
+
+            @include md {
+                flex-direction: column;
+                align-items: center;
+                row-gap: 20px;
+
+                .footer-logo {
+                    text-align: center;
                 }
             }
         }

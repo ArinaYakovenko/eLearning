@@ -9,6 +9,24 @@
         top: 95px;
         left: 0;
         z-index: 1;
+
+        .decoration-circle-top {
+            width: 25px;
+            height: 25px;
+            background-color: var(--green);
+            border-radius: 50%;
+            position: absolute;
+            left: -10px;
+        }
+
+        .decoration-circle-bottom {
+            width: 25px;
+            height: 25px;
+            background-color: var(--green);
+            border-radius: 50%;
+            position: absolute;
+            right: -10px;
+        }
     }
 
     h1 {
@@ -26,6 +44,7 @@
 
         .search-block {
             position: relative;
+            z-index: 3;
 
             input {
                 width: 300px;
@@ -85,6 +104,14 @@
             gap: 110px;
             justify-content: start;
 
+            @include xl {
+                margin-top: 15px;
+            }
+
+            @include md {
+                margin-top: 45px;
+            }
+
             @include lg {
                 flex-wrap: wrap;
                 justify-content: space-between;
@@ -122,19 +149,63 @@
             .next {
                 margin-left: 25px;
             }
+
+            @include xl {
+                margin-top: 45px;
+            }
+        }
+    }
+
+    @include xl {
+        max-width: 1024px;
+
+        .decoration {
+            max-width: 1024px;
+            top: 120px;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    @include lg {
+        max-width: 760px;
+        .decoration {
+            max-width: 760px;
+            top: auto;
+            bottom: -230px;
         }
     }
 
     @include md {
-        padding-top: 30px;
+        padding: 40px 0 30px 0;
+        max-width: 480px;
+
+        .decoration {
+            max-width: 480px;
+            bottom: -150px;
+            left: -30px;
+        }
 
         h1 {
             font-size: 35px;
+            margin-bottom: 20px;
         }
     }
 
-    @include md {
+    @include sm{
+        max-width: 350px;
+
+        .decoration {
+            max-width: 350px;
+            bottom: -90px;
+            left: 0;
+        }
+
         h1 {
+            font-size: 35px;
             margin-bottom: 20px;
         }
     }

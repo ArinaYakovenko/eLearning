@@ -3,6 +3,8 @@
     align-items: center;
     height: 45px;
     transition: none;
+    position: relative;
+    z-index: 3;
 
     p {
         margin-right: 10px;

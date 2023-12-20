@@ -12,6 +12,7 @@
         flex-wrap: wrap;
         gap: 5px;
         position: relative;
+        z-index: 3;
 
         .selectedOccupation{
             display: flex;
