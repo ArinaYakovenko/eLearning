@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import HeaderCarousel from './HeaderCarousel';
 import logo from '../assets/images/LogoCol.svg';
 

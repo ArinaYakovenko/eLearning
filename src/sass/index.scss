@@ -32,7 +32,6 @@ body{
 
 .App {
     position: relative;
-    overflow-x: hidden;
 }
 
 .container-block {
@@ -43,22 +42,18 @@ body{
 
 
     @include xl {
-        /* Стилі для розмірів екранів до 'xl' (1200px) і нище */
         max-width: 1024px;
     }
 
     @include lg {
-        /* Стилі для розмірів екранів до 'lg' (1024px) і нище */
         max-width: 760px;
     }
 
     @include md {
-        /* Стилі для розмірів екранів до 'md' (768px) і нище */
         max-width: 480px;
     }
 
     @include sm {
-        /* Стилі для розмірів екранів до 'sm' (480px) і нище */
         max-width: 350px;
     }
 }

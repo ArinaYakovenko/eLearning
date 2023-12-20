@@ -3,16 +3,14 @@ import Card from './Card';
 import ColorPicker from './ColorPicker';
 import OccupationPicker from './OccupationPicker';
 
-// images
-
 const Services = ({ scroll }) => {
-    console.log(scroll);
     const [toggleColors, setToggleColors] = useState(false);
     const [selectColor, setSelectColor] = useState('yellow');
     const [selectType, setSelectType] = useState('circle');
     const [toggleOccupations, setToggleOccupations] = useState(false);
     const [selectOccupation, setSelectOccupation] = useState('All');
     const [searchText, setSearchText] = useState('');
+    const [opacity, setOpacity] = useState(0.1);
 
     const colors = [
         {
@@ -111,8 +109,6 @@ const Services = ({ scroll }) => {
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
-
-    const [opacity, setOpacity] = useState(0.1);
     
     useEffect(() => {
         const newOpacity = scroll >= 700 ? Math.min((scroll - 700) / 200, 1) : 0.1;

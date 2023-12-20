@@ -1,15 +1,15 @@
 @import '../_breakpoints';
-@import '../colors';
+@import '../_colors';
 
-@import '../components/_card';
-@import '../components/_carousel';
-@import '../components/_colorpicker';
-@import '../components/_occupationpicker';
-@import '../components/_chat';
+@import '../components/card';
+@import '../components/carousel';
+@import '../components/colorpicker';
+@import '../components/occupationpicker';
+@import '../components/chat';
 
-@import '../sections/_feedback';
-@import '../sections/_footer';
-@import '../sections/_header';
-@import '../sections/_main';
-@import '../sections/_services';
-@import '../sections/_designlearn';
+@import '../sections/feedback';
+@import '../sections/footer';
+@import '../sections/header';
+@import '../sections/main';
+@import '../sections/services';
+@import '../sections/designlearn';
